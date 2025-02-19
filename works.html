@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Works - The Philippines a Century Hence</title>
+
+   <!-- Lato Font (Google Fonts) -->
+<link
+href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+rel="stylesheet"
+/>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="fade-in-down">
+    <div class="logo">Rizal</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="works.html" class="active">Works</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Works Section -->
+  <section class="section fade-in-up">
+    <h2 class="section-title">Works</h2>
+
+    <!-- Flexbox corner boxes for Noli and Fili -->
+    <div class="flex-boxes">
+      <div class="corner-box-left">
+        <h3>Noli Me Tángere (1887)</h3>
+        <p>
+          Often regarded as the novel that sparked the Philippine revolution,
+          <em>Noli Me Tángere</em> exposes the injustices under Spanish colonial rule.
+          Rizal uses memorable characters like Crisostomo Ibarra and María Clara to
+          highlight themes of social inequality, corruption, and religious hypocrisy.
+          This groundbreaking work awakened Filipino consciousness and inspired
+          demands for reform.
+        </p>
+      </div>
+
+      <div class="corner-box-right">
+        <h3>El Filibusterismo (1891)</h3>
+        <p>
+          A darker sequel to <em>Noli Me Tángere</em>, <em>El Filibusterismo</em>
+          follows the transformed protagonist Simoun, who advocates more radical
+          approaches to colonial oppression. The novel critiques the failures of
+          reform, demonstrating how unresolved injustices can breed anger and
+          revolution.
+        </p>
+      </div>
+    </div>
+
+    <!-- Single corner box for "The Philippines a Century Hence" -->
+    <div class="corner-box-single" style="margin-top: 2rem;">
+      <h3>The Philippines a Century Hence (La Solidaridad, 1889-1890)</h3>
+      <p>
+        This four-part essay provides a bold prediction of the Philippines' future.
+        Rizal discusses how education, self-determination, and cultural pride can
+        either elevate or hinder a nation’s progress. He warns that continued
+        oppression would inevitably lead to unrest, while enlightenment and
+        compassion could pave the way for a flourishing society.
+      </p>
+      <p>
+        By advocating gradual yet persistent reforms, Rizal hoped to guide Filipinos
+        toward peaceful independence and a strong national identity. His ideas
+        remain influential, offering timeless lessons on governance, civic duty, and
+        the transformative power of unity.
+      </p>
+    </div>
+
+    <!-- NEW: Image Containers with Arrows for Zoom Effect -->
+    <h3 style="margin-top: 3rem; color: var(--neon-orange);">
+      Visual Highlights
+    </h3>
+    <div class="image-gallery">
+      <!-- Each container has an arrow + the image -->
+      <div class="image-container">
+        <!-- Arrow in top-right corner -->
+        <div class="arrow">&rarr;</div>
+        <img src="image1.png" alt="Noli Me Tangere" class="zoom-img" />
+      </div>
+
+      <div class="image-container">
+        <div class="arrow">&rarr;</div>
+        <img src="image2.png" alt="El Filibusterismo" class="zoom-img" />
+      </div>
+
+      <div class="image-container">
+        <div class="arrow">&rarr;</div>
+        <img src="image3.png" alt="The Philippines a Century Hence" class="zoom-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="fade-in-up">
+    <p>&copy; Jose Rizal. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional JS -->
+  <script src="script.js"></script>
+</body>
+</html>

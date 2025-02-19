@@ -1,0 +1,390 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Fonts */
+body {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  background: #000; /* Dark background */
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Accent Color Variables */
+:root {
+  --neon-orange: #ff6600;
+  --neon-orange-glow: rgba(255, 102, 0, 0.6);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neon-orange);
+  text-shadow: 0 0 5px var(--neon-orange);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--neon-orange);
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: var(--neon-orange);
+  box-shadow: 0 0 5px var(--neon-orange);
+  border-radius: 10px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 80px; /* offset for fixed header */
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--neon-orange);
+  text-shadow: 0 0 10px var(--neon-orange);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.btn-glow {
+  display: inline-block;
+  background: none;
+  border: 2px solid var(--neon-orange);
+  color: var(--neon-orange);
+  padding: 0.8rem 1.4rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange);
+}
+
+.btn-glow:hover {
+  background: var(--neon-orange);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-orange), 0 0 30px var(--neon-orange);
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--neon-orange);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--neon-orange);
+}
+
+/* Section Styles */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 5% 50px; /* top offset for spacing below hero */
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--neon-orange);
+  text-shadow: 0 0 5px var(--neon-orange);
+}
+
+.section p,
+.section li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Lists */
+.section ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.section ul li::before {
+  content: "• ";
+  color: var(--neon-orange);
+  margin-right: 0.5rem;
+}
+
+/* Links */
+.section a {
+  color: var(--neon-orange);
+  text-decoration: underline;
+}
+
+.section a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px var(--neon-orange);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #888;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+/* Fade / Slide Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Section Title (optional styling) */
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: var(--neon-orange);
+  text-shadow: 0 0 5px var(--neon-orange);
+}
+
+/* Flex container for corner boxes */
+.flex-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* space between boxes */
+  justify-content: space-between; /* left & right alignment */
+  align-items: flex-start;
+}
+
+/* Left corner box */
+.corner-box-left {
+  flex: 1;
+  min-width: 280px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--neon-orange);
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--neon-orange);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corner-box-left:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--neon-orange), 0 0 30px var(--neon-orange);
+}
+
+/* Right corner box */
+.corner-box-right {
+  flex: 1;
+  min-width: 280px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--neon-orange);
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--neon-orange);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corner-box-right:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--neon-orange), 0 0 30px var(--neon-orange);
+}
+
+/* Single corner box spanning full width */
+.corner-box-single {
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--neon-orange);
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--neon-orange);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corner-box-single:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--neon-orange), 0 0 30px var(--neon-orange);
+}
+
+/* Responsive: stack corner boxes vertically on smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+
+  .hero-content,
+  .hero-image {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 80px 2rem;
+  }
+
+  .flex-boxes {
+    flex-direction: column;
+  }
+
+  .corner-box-left,
+  .corner-box-right {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+/* Image Gallery Container */
+.image-gallery {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* So it wraps on smaller screens */
+  margin-top: 1.5rem;
+}
+
+/* Container for each image + arrow */
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+}
+
+/* The arrow in top-right corner */
+.arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--neon-orange);
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Arrow hover effect (arrow grows slightly) */
+.arrow:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* The image (no zoom by default) */
+.zoom-img {
+  width: 220px; /* Adjust as desired */
+  height: auto;
+  border: 2px solid var(--neon-orange);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--neon-orange);
+  transition: transform 0.3s ease;
+}
+
+/* If user hovers the arrow, zoom the sibling image */
+.arrow:hover + .zoom-img {
+  transform: scale(1.1);
+}
